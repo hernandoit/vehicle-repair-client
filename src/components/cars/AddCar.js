@@ -29,7 +29,7 @@ class AddCar extends Component {
     const { user, msgAlert, history } = this.props
 
     addCar(this.state, user)
-      .then(res => history.push('/'))
+      .then(res => history.push('/cars'))
       .then(() => msgAlert({ heading: 'Car Added!', message: 'Nice work, your vehicle has been added.', variant: 'success' }))
       .catch(err => {
         msgAlert({
