@@ -50,13 +50,16 @@ This is the Express API to our vehicle repair app.
  - Have at least 1 resource that has a relationship to User
  - Any actions which change data must be authenticated and the data must be "owned" by the user performing the change or a user determined by an access control list
 #### `User stories`
+**Auth**
 - As an unregistered user, I would like to sign up with email and password.
 - As a registered user, I would like to sign in with email and password.
 - As a signed in user, I would like to change password.
 - As a signed in user, I would like to sign out.
+**Car**
 - As a signed in user, I would like to add my vehicles information.
 - As a signed in user, I would like to create a service ticket for my vehicle(s) 
 based on the service(s) I choose.
+**Ticket**
 - As a signed in user, I would like to see the service ticket(s) I have created.
 - As a signed in user, I would like to update or delete my service ticket(s).
 - As a signed in user, I would like to know if the service(s) have been complete.
@@ -65,8 +68,8 @@ based on the service(s) I choose.
 #### `Technologies Used`
 - GitHub
 - Express
-- Heroku
-- MongoDB
+- React
+- Node
 
 #### `Unsolved Problems`
 1. I would like to have clients be able to add more services to an invoice.
