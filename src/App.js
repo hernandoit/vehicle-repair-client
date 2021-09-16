@@ -16,6 +16,7 @@ import AddCar from './components/cars/AddCar'
 import IndexCars from './components/cars/IndexCars'
 import ShowCars from './components/cars/ShowCars'
 import UpdateCar from './components/cars/UpdateCar'
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -93,7 +94,7 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            path='/cars'
+            path='/add-cars'
             render={() => (
               <AddCar msgAlert={this.msgAlert} user={user}/>
             )}
