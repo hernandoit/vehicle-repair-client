@@ -2,15 +2,20 @@
 import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
-
+// Import individual custom components from our components directory
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
+// Import Auth components
 import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-
+// Import our Cars components
+import AddCar from './components/cars/AddCar'
+import IndexCars from './components/cars/IndexCars'
+import ShowCars from './components/cars/ShowCars'
+import UpdateCar from './components/cars/UpdateCar'
 class App extends Component {
   constructor (props) {
     super(props)
@@ -84,6 +89,34 @@ class App extends Component {
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/cars'
+            render={() => (
+              <AddCar msgAlert={this.msgAlert} user={user}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/cars'
+            render={() => <IndexCars msgAlert={this.msgAlert} user={user}/>}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/cars/:id'
+            render={() => (
+              <ShowCars user={user} msgAlert={this.msgAlert}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/cars/:id/edit'
+            render={() => (
+              <UpdateCar user={user} msgAlert={this.msgAlert}/>
             )}
           />
         </main>
