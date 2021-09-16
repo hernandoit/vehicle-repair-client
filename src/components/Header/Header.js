@@ -5,8 +5,10 @@ import { Link, NavLink } from 'react-router-dom'
 
 const authenticatedOptions = (
   <Fragment>
-    <NavLink to='/cars' className='nav-link'>Index of Vehicles</NavLink>
     <NavLink to='/add-cars' className='nav-link'>Add Vehicle</NavLink>
+    <NavLink to='/cars' className='nav-link'>Index of Vehicles</NavLink>
+    <NavLink to='/add-tickets' className='nav-link'>Add Ticket</NavLink>
+    <NavLink to='/tickets' className='nav-link'>Index of Tickets</NavLink>
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
   </Fragment>
