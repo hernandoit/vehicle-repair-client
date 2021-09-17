@@ -16,6 +16,8 @@ This app will allow a user to add their `vehicle` and add a `ticket` for service
 ## `Important Links`
 [Deployed Client](https://hernandoit.github.io/vehicle-repair-client/)
 
+[Deployed Server](https://salty-river-98460.herokuapp.com/)
+
 [Client Repo](https://github.com/hernandoit/vehicle-repair-client)
 
 [Server Repo](https://github.com/hernandoit/express-api-vehicle-repair)
@@ -70,6 +72,7 @@ based on the service(s) I choose.
 #### `Technologies Used`
 - GitHub
 - Express
+- Bootstrap
 - React
 - Node
 
