@@ -3,6 +3,8 @@
 # vehicle-repair-client
 This is the Express API to our vehicle repair app.
 
+This app will allow a user to add their `vehicle` and add a `ticket` for service repairs to be done.  This is a way for the user to keep track of what services have been done to their vehicle.
+
 ## `Setup Steps`
 1. Fork and clone this repository into your projects location 
    - `git clone git@github.com:<your github account name here>/react-material-design.git`
