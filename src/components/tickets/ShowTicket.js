@@ -19,8 +19,6 @@ class ShowTicket extends Component {
   componentDidMount () {
     // one of the automatic router props we get is the match object - that has data about the params in our front-end route url
     const { match, user, msgAlert } = this.props
-    console.log(this.props)
-    console.log('this is match.params', match.params)
     showTicket(match.params.carId, match.params.ticketId, user)
       .then(res => this.setState({ ticket: res.data.ticket }))
       .then(() => msgAlert({
@@ -57,7 +55,6 @@ class ShowTicket extends Component {
       <>
         <h3>Vehicle Ticket(s)</h3>
         <h5>{job} {labor} {isComplete}</h5>
-        <p>This is where my tickets should be seen</p>
         {/* Compare the signed in user's ID against the owner of this car */}
         {user._id === owner && (
           <>
