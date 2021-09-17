@@ -19,7 +19,7 @@ export const addTicket = (data, carId, user) => {
 }
 
 // GET /tickets/:carId/:ticketId
-export const showTickets = (carId, ticketId, user) => {
+export const showTicket = (carId, ticketId, user) => {
   return axios({
     url: apiUrl + '/tickets/' + carId + '/' + ticketId,
     // method is optional, default is GET

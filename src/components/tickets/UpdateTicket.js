@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 // API request
-import { updateTicket, showTickets } from '../../api/tickets'
+import { updateTicket, showTicket } from '../../api/tickets'
 import TicketForm from '../shared/CarForm'
 
 class UpdateTicket extends Component {
@@ -22,7 +22,7 @@ class UpdateTicket extends Component {
     // one of the automatic router props we get is the match object - that has data about the params in our front-end route url
     const { match, user, msgAlert } = this.props
 
-    showTickets(match.params.id, user)
+    showTicket(match.params.id, user)
       .then(res => this.setState({ car: res.data.ticket }))
       .then(() => msgAlert({
         heading: 'Show ticket success',

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 // API request
 import { showCars, destroyCar } from '../../api/cars'
-
+// import { addTicket } from '../../api/tickets'
 import Button from 'react-bootstrap/Button'
 
 class ShowCars extends Component {
@@ -59,6 +59,7 @@ class ShowCars extends Component {
         {/* Compare the signed in user's ID against the owner of this car */}
         {user._id === owner && (
           <>
+            <Button onClick={() => history.push(`/add-tickets/${match.params.id}`)}>Add Ticket</Button>
             <Button onClick={this.handleDelete}>Delete</Button>
             {/* Button with a Link inside should work but is ugly. Better way below. */}
             {/* <Button><Link to={`/cars/${match.params.id}/edit`}>Update</Link></Button> */}

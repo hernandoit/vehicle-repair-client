@@ -7,8 +7,8 @@ const authenticatedOptions = (
   <Fragment>
     <NavLink to='/add-cars' className='nav-link'>Add Vehicle</NavLink>
     <NavLink to='/cars' className='nav-link'>Index of Vehicles</NavLink>
-    <NavLink to='/add-tickets' className='nav-link'>Add Ticket</NavLink>
-    <NavLink to='/tickets' className='nav-link'>Index of Tickets</NavLink>
+    {/* <NavLink to='/add-tickets/:carId' className='nav-link'>Add Ticket</NavLink> */}
+    <NavLink to='/tickets' className='nav-link'>Show Tickets</NavLink>
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
   </Fragment>
@@ -28,9 +28,9 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg='primary' variant='dark' expand='md'>
+  <Navbar bg='warning' variant='light' expand='sm'>
     <Navbar.Brand>
-      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>Vehicle Repair</Link>
+      <Link to='/' style={{ color: '#000000', textDecoration: 'none' }}>Vehicle Repair</Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>

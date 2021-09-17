@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 // API request
-import { showTickets, destroyTicket } from '../../api/tickets'
+import { showTicket, destroyTicket } from '../../api/tickets'
 
 import Button from 'react-bootstrap/Button'
 
-class ShowTickets extends Component {
+class ShowTicket extends Component {
   constructor (props) {
     super(props)
 
@@ -20,7 +20,8 @@ class ShowTickets extends Component {
     // one of the automatic router props we get is the match object - that has data about the params in our front-end route url
     const { match, user, msgAlert } = this.props
     console.log(this.props)
-    showTickets(match.params.id, user)
+    console.log('this is match.params', match.params)
+    showTicket(match.params.carId, match.params.ticketId, user)
       .then(res => this.setState({ ticket: res.data.ticket }))
       .then(() => msgAlert({
         heading: 'Show Ticket success',
@@ -64,7 +65,7 @@ class ShowTickets extends Component {
             {/* Button with a Link inside should work but is ugly. Better way below. */}
             {/* <Button><Link to={`/cars/${match.params.id}/edit`}>Update</Link></Button> */}
             {/* Provide the Button a `onClick` handler & use the history object to redirect the user */}
-            <Button onClick={() => history.push(`/tickets/${match.params.id}/edit`)}>
+            <Button onClick={() => history.push(`/tickets/${match.params.carId}/${match.params.ticketId}/edit`)}>
               Update
             </Button>
           </>
@@ -74,4 +75,4 @@ class ShowTickets extends Component {
   }
 }
 
-export default withRouter(ShowTickets)
+export default withRouter(ShowTicket)

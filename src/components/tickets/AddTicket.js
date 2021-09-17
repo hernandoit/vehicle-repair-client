@@ -26,10 +26,10 @@ class AddTicket extends Component {
   handleSubmmit = (event) => {
     event.preventDefault()
 
-    const { user, msgAlert, history } = this.props
+    const { user, msgAlert, history, carId } = this.props
 
     addTicket(this.state, user)
-      .then(res => history.push('/tickets/:carId'))
+      .then(res => history.push('/tickets/' + carId))
       .then(() => msgAlert({ heading: 'Ticket Assigned!', message: 'Your vehicle has been assigned a ticket.', variant: 'success' }))
       .catch(err => {
         msgAlert({
@@ -43,6 +43,7 @@ class AddTicket extends Component {
   render () {
     return (
       <>
+        <p>This Cars year make and model</p>
         <Form onSubmit={this.handleSubmmit}>
           <Form.Group>
             <Form.Label>Job

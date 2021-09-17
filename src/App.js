@@ -18,7 +18,7 @@ import ShowCars from './components/cars/ShowCars'
 import UpdateCar from './components/cars/UpdateCar'
 // Import our Tickets components
 import AddTicket from './components/tickets/AddTicket'
-import ShowTickets from './components/tickets/ShowTickets'
+import ShowTicket from './components/tickets/ShowTicket'
 import UpdateTicket from './components/tickets/UpdateTicket'
 
 class App extends Component {
@@ -125,6 +125,7 @@ class App extends Component {
               <UpdateCar user={user} msgAlert={this.msgAlert}/>
             )}
           />
+          {/* paths dont have to match the backend naming convention could be /donuts/:carId and it wouldn't make a difference */}
           <AuthenticatedRoute
             user={user}
             path='/add-tickets/:carId'
@@ -137,7 +138,7 @@ class App extends Component {
             exact
             path='/tickets/:carId/:ticketId'
             render={() => (
-              <ShowTickets user={user} msgAlert={this.msgAlert}/>
+              <ShowTicket user={user} msgAlert={this.msgAlert}/>
             )}
           />
           <AuthenticatedRoute
