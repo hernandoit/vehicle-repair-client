@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/vehicle-repair-client/static/css/main.432dfbff.chunk.css",
-    "main.js": "/vehicle-repair-client/static/js/main.94c16018.chunk.js",
-    "main.js.map": "/vehicle-repair-client/static/js/main.94c16018.chunk.js.map",
+    "main.js": "/vehicle-repair-client/static/js/main.131a8288.chunk.js",
+    "main.js.map": "/vehicle-repair-client/static/js/main.131a8288.chunk.js.map",
     "runtime-main.js": "/vehicle-repair-client/static/js/runtime-main.7feeda19.js",
     "runtime-main.js.map": "/vehicle-repair-client/static/js/runtime-main.7feeda19.js.map",
-    "static/js/2.97d8ddda.chunk.js": "/vehicle-repair-client/static/js/2.97d8ddda.chunk.js",
-    "static/js/2.97d8ddda.chunk.js.map": "/vehicle-repair-client/static/js/2.97d8ddda.chunk.js.map",
+    "static/js/2.0e045bab.chunk.js": "/vehicle-repair-client/static/js/2.0e045bab.chunk.js",
+    "static/js/2.0e045bab.chunk.js.map": "/vehicle-repair-client/static/js/2.0e045bab.chunk.js.map",
     "index.html": "/vehicle-repair-client/index.html",
     "static/css/main.432dfbff.chunk.css.map": "/vehicle-repair-client/static/css/main.432dfbff.chunk.css.map",
-    "static/js/2.97d8ddda.chunk.js.LICENSE.txt": "/vehicle-repair-client/static/js/2.97d8ddda.chunk.js.LICENSE.txt"
+    "static/js/2.0e045bab.chunk.js.LICENSE.txt": "/vehicle-repair-client/static/js/2.0e045bab.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7feeda19.js",
-    "static/js/2.97d8ddda.chunk.js",
+    "static/js/2.0e045bab.chunk.js",
     "static/css/main.432dfbff.chunk.css",
-    "static/js/main.94c16018.chunk.js"
+    "static/js/main.131a8288.chunk.js"
   ]
 }
