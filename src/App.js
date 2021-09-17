@@ -16,6 +16,10 @@ import AddCar from './components/cars/AddCar'
 import IndexCars from './components/cars/IndexCars'
 import ShowCars from './components/cars/ShowCars'
 import UpdateCar from './components/cars/UpdateCar'
+// Import our Tickets components
+import AddTicket from './components/tickets/AddTicket'
+import ShowTickets from './components/tickets/ShowTickets'
+import UpdateTicket from './components/tickets/UpdateTicket'
 
 class App extends Component {
   constructor (props) {
@@ -103,7 +107,8 @@ class App extends Component {
             user={user}
             exact
             path='/cars'
-            render={() => <IndexCars msgAlert={this.msgAlert} user={user}/>}
+            render={() =>
+              <IndexCars msgAlert={this.msgAlert} user={user}/>}
           />
           <AuthenticatedRoute
             user={user}
@@ -118,6 +123,28 @@ class App extends Component {
             path='/cars/:id/edit'
             render={() => (
               <UpdateCar user={user} msgAlert={this.msgAlert}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/add-tickets/:carId'
+            render={() => (
+              <AddTicket msgAlert={this.msgAlert} user={user}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/tickets/:carId/:ticketId'
+            render={() => (
+              <ShowTickets user={user} msgAlert={this.msgAlert}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/tickets/:carId/:ticketId/edit'
+            render={() => (
+              <UpdateTicket user={user} msgAlert={this.msgAlert}/>
             )}
           />
         </main>

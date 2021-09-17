@@ -43,7 +43,7 @@ export const showCars = (id, user) => {
 }
 
 // DELETE /cars/:id
-export const deleteCar = (id, user) => {
+export const destroyCar = (id, user) => {
   return axios({
     url: apiUrl + '/cars/' + id,
     method: 'DELETE',

@@ -1,33 +1,34 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 // API request
-import { showCars, destroyCar } from '../../api/cars'
+import { showTickets, destroyTicket } from '../../api/tickets'
 
 import Button from 'react-bootstrap/Button'
 
-class ShowCars extends Component {
+class ShowTickets extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
       // using null as a starting value will help us manage the "loading state" of our ShowCars component
-      car: null,
-      ticket: null
+      // car: null,
+      ticket: undefined
     }
   }
 
   componentDidMount () {
     // one of the automatic router props we get is the match object - that has data about the params in our front-end route url
     const { match, user, msgAlert } = this.props
-    showCars(match.params.id, user)
-      .then(res => this.setState({ car: res.data.car }))
+    console.log(this.props)
+    showTickets(match.params.id, user)
+      .then(res => this.setState({ ticket: res.data.ticket }))
       .then(() => msgAlert({
-        heading: 'Show car success',
-        message: 'Check out the car',
+        heading: 'Show Ticket success',
+        message: 'Check out the ticket',
         variant: 'success'
       }))
       .catch(err => msgAlert({
-        heading: 'Show car failed :(',
+        heading: 'Show ticket failed :(',
         message: 'Something went wrong: ' + err.message,
         variant: 'danger'
       }))
@@ -35,26 +36,26 @@ class ShowCars extends Component {
 
   handleDelete = (event) => {
     const { match, user, msgAlert, history } = this.props
-    destroyCar(match.params.id, user)
+    destroyTicket(match.params.id, user)
       // Redirect to the list of cars
-      .then(() => history.push('/cars'))
-      .then(() => msgAlert({ heading: 'Deleted car successfully', message: 'car is no more', variant: 'success' }))
-      .catch(err => msgAlert({ heading: 'Delete car failed :(', message: 'Something went wrong: ' + err.message, variant: 'danger' }))
+      .then(() => history.push('/tickets'))
+      .then(() => msgAlert({ heading: 'Deleted ticket successfully', message: 'ticket is no more', variant: 'success' }))
+      .catch(err => msgAlert({ heading: 'Delete ticket failed :(', message: 'Something went wrong: ' + err.message, variant: 'danger' }))
   }
 
   render () {
-    if (this.state.car === null) {
+    if (this.state.ticket === null) {
       return 'Loading...'
     }
 
     // Get the owner (a user id) from the car state
-    const { year, make, model, owner } = this.state.car
+    const { job, labor, isComplete, owner } = this.state.ticket
     const { history, match, user } = this.props
 
     return (
       <>
         <h3>Vehicle Ticket(s)</h3>
-        <h5>{year} {make} {model}</h5>
+        <h5>{job} {labor} {isComplete}</h5>
         <p>This is where my tickets should be seen</p>
         {/* Compare the signed in user's ID against the owner of this car */}
         {user._id === owner && (
@@ -63,7 +64,7 @@ class ShowCars extends Component {
             {/* Button with a Link inside should work but is ugly. Better way below. */}
             {/* <Button><Link to={`/cars/${match.params.id}/edit`}>Update</Link></Button> */}
             {/* Provide the Button a `onClick` handler & use the history object to redirect the user */}
-            <Button onClick={() => history.push(`/cars/${match.params.id}/edit`)}>
+            <Button onClick={() => history.push(`/tickets/${match.params.id}/edit`)}>
               Update
             </Button>
           </>
@@ -73,4 +74,4 @@ class ShowCars extends Component {
   }
 }
 
-export default withRouter(ShowCars)
+export default withRouter(ShowTickets)
