@@ -9,7 +9,7 @@ import axios from 'axios'
 export const addCar = (data, user) => {
   return axios({
     url: apiUrl + '/cars',
-    method: 'post',
+    method: 'POST',
     data: { car: data },
     headers: {
       Authorization: `Bearer ${user.token}`

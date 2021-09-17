@@ -21,7 +21,7 @@ export const addTicket = (data, carId, user) => {
 // GET /tickets/:carId/:ticketId
 export const showTickets = (carId, ticketId, user) => {
   return axios({
-    url: apiUrl + '/tickets/' + carId + ticketId,
+    url: apiUrl + '/tickets/' + carId + '/' + ticketId,
     // method is optional, default is GET
     headers: {
       Authorization: `Bearer ${user.token}`
@@ -32,7 +32,7 @@ export const showTickets = (carId, ticketId, user) => {
 // PATCH /tickets/:carId/:ticketId
 export const updateTicket = (data, carId, ticketId, user) => {
   return axios({
-    url: apiUrl + '/tickets/' + carId + ticketId,
+    url: apiUrl + '/tickets/' + carId + '/' + ticketId,
     method: 'PATCH',
     data: { ticket: data },
     headers: {
@@ -44,7 +44,7 @@ export const updateTicket = (data, carId, ticketId, user) => {
 // DELETE /tickets/:carId/:ticketId
 export const destroyTicket = (carId, ticketId, user) => {
   return axios({
-    url: apiUrl + '/tickets/' + carId + ticketId,
+    url: apiUrl + '/tickets/' + carId + '/' + ticketId,
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${user.token}`
