@@ -61,10 +61,9 @@ class ShowCars extends Component {
           <h5>{year} {make} {model}</h5>
           <Button onClick={this.handleDelete}>Delete Vehicle</Button>
           <Button onClick={() => history.push(`/cars/${match.params.id}/edit`)}>Update Vehicle</Button>
+          <Button onClick={() => history.push(`/add-tickets/${match.params.id}`)}>Add Ticket</Button>
         </div>
         <p>Vehicle Tickets</p>
-        <Button onClick={() => history.push(`/add-tickets/${match.params.id}`)}>Add Ticket</Button>
-        <p>{tickets.id}{tickets.job}</p>
         {/* Compare the signed in user's ID against the owner of this car */}
         {/* {user._id === owner && (
           <>

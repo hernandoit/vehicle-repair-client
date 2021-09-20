@@ -28,7 +28,7 @@ class AddTicket extends Component {
 
     const { user, msgAlert, history, match } = this.props
     addTicket(this.state, match.params.carId, user)
-      .then(res => history.push('/tickets/' + match.params.carId))
+      .then(res => history.push('/cars/' + match.params.carId))
       .then(() => msgAlert({ heading: 'Ticket Assigned!', message: 'Your vehicle has been assigned a ticket.', variant: 'success' }))
       .catch(err => {
         msgAlert({
