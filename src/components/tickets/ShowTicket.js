@@ -48,13 +48,18 @@ class ShowTicket extends Component {
     }
 
     // Get the owner (a user id) from the car state
-    const { job, labor, isComplete, owner } = this.state.ticket
+    const { owner, tickets } = this.state.ticket // job, labor, isComplete,
     const { history, match, user } = this.props
 
     return (
       <>
-        <h3>Vehicle Ticket(s)</h3>
-        <h5>{job} {labor} {isComplete}</h5>
+        <h1>Vehicle Ticket(s)</h1>
+        {tickets.map(({ id, job, labor, isComplete }) => (
+          <ShowTicket key={id} job={job} labor={labor} isComplete={isComplete} />
+        ))}
+        {/* <h3>Vehicle Ticket(s)</h3>
+        { tickets.map(ticket => <div>{ticket.key} {ticket.job} {ticket.labor} {ticket.isComplete}</div>) } */}
+        {/* <h5>{job} {labor} {isComplete}</h5> */}
         {/* Compare the signed in user's ID against the owner of this car */}
         {user._id === owner && (
           <>

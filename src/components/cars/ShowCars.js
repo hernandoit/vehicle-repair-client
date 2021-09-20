@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { showCars, destroyCar } from '../../api/cars'
 // import { addTicket } from '../../api/tickets'
 import Button from 'react-bootstrap/Button'
+// import ShowTicket from '../tickets/ShowTicket'
 
 class ShowCars extends Component {
   constructor (props) {
@@ -11,8 +12,7 @@ class ShowCars extends Component {
 
     this.state = {
       // using null as a starting value will help us manage the "loading state" of our ShowCars component
-      car: null,
-      ticket: null
+      car: null
     }
   }
 
@@ -48,27 +48,28 @@ class ShowCars extends Component {
     }
 
     // Get the owner (a user id) from the car state
-    const { year, make, model, owner } = this.state.car
-    const { history, match, user } = this.props
-
+    // owner
+    const { year, make, model, tickets } = this.state.car
+    // user
+    const { history, match } = this.props
+    // console.log('this is state', this.state)
+    console.log('THIS IS TICKETS', tickets)
     return (
       <>
-        <h3>Vehicle Ticket(s)</h3>
-        <h5>{year} {make} {model}</h5>
-        <p>This is where my tickets should be seen</p>
+        <div>
+          <h3>Vehicle Ticket(s)</h3>
+          <h5>{year} {make} {model}</h5>
+          <Button onClick={this.handleDelete}>Delete Vehicle</Button>
+          <Button onClick={() => history.push(`/cars/${match.params.id}/edit`)}>Update Vehicle</Button>
+        </div>
+        <p>Vehicle Tickets</p>
+        <Button onClick={() => history.push(`/add-tickets/${match.params.id}`)}>Add Ticket</Button>
+        <p>{tickets.id}{tickets.job}</p>
         {/* Compare the signed in user's ID against the owner of this car */}
-        {user._id === owner && (
+        {/* {user._id === owner && (
           <>
-            <Button onClick={() => history.push(`/add-tickets/${match.params.id}`)}>Add Ticket</Button>
-            <Button onClick={this.handleDelete}>Delete</Button>
-            {/* Button with a Link inside should work but is ugly. Better way below. */}
-            {/* <Button><Link to={`/cars/${match.params.id}/edit`}>Update</Link></Button> */}
-            {/* Provide the Button a `onClick` handler & use the history object to redirect the user */}
-            <Button onClick={() => history.push(`/cars/${match.params.id}/edit`)}>
-              Update
-            </Button>
           </>
-        )}
+        )} */}
       </>
     )
   }

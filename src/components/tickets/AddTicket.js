@@ -26,10 +26,9 @@ class AddTicket extends Component {
   handleSubmmit = (event) => {
     event.preventDefault()
 
-    const { user, msgAlert, history, carId } = this.props
-
-    addTicket(this.state, user)
-      .then(res => history.push('/tickets/' + carId))
+    const { user, msgAlert, history, match } = this.props
+    addTicket(this.state, match.params.carId, user)
+      .then(res => history.push('/tickets/' + match.params.carId))
       .then(() => msgAlert({ heading: 'Ticket Assigned!', message: 'Your vehicle has been assigned a ticket.', variant: 'success' }))
       .catch(err => {
         msgAlert({
