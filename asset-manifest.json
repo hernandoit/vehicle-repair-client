@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vehicle-repair-client/static/css/main.432dfbff.chunk.css",
-    "main.js": "/vehicle-repair-client/static/js/main.d861a10c.chunk.js",
-    "main.js.map": "/vehicle-repair-client/static/js/main.d861a10c.chunk.js.map",
+    "main.js": "/vehicle-repair-client/static/js/main.ad64783f.chunk.js",
+    "main.js.map": "/vehicle-repair-client/static/js/main.ad64783f.chunk.js.map",
     "runtime-main.js": "/vehicle-repair-client/static/js/runtime-main.7feeda19.js",
     "runtime-main.js.map": "/vehicle-repair-client/static/js/runtime-main.7feeda19.js.map",
     "static/js/2.c9f6cf56.chunk.js": "/vehicle-repair-client/static/js/2.c9f6cf56.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.7feeda19.js",
     "static/js/2.c9f6cf56.chunk.js",
     "static/css/main.432dfbff.chunk.css",
-    "static/js/main.d861a10c.chunk.js"
+    "static/js/main.ad64783f.chunk.js"
   ]
 }
