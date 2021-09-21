@@ -51,7 +51,7 @@ class ShowCars extends Component {
     const { history, match } = this.props
     const { car } = this.state
 
-    const showTickets = car.tickets.map(ticket => (
+    const displayTickets = car.tickets.map(ticket => (
       <ShowTicket key={ticket.id} job={ticket.job} labor={ticket.labor} isComplete={ticket.isComplete} />
     ))
     return (
@@ -62,7 +62,7 @@ class ShowCars extends Component {
           <Button onClick={() => history.push(`/cars/${match.params.id}/edit`)}>Update Vehicle</Button>
           <Button onClick={() => history.push(`/add-tickets/${match.params.id}`)}>Add Ticket</Button>
         </div>
-        <p>{showTickets}</p>
+        <p>{displayTickets}</p>
       </>
     )
   }
