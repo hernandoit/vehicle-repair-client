@@ -50,10 +50,10 @@ class ShowCars extends Component {
     // user
     const { history, match } = this.props
     const { car } = this.state
-
     const displayTickets = car.tickets.map(ticket => (
       <ShowTicket key={ticket.id} job={ticket.job} labor={ticket.labor} isComplete={ticket.isComplete} />
     ))
+    console.log('this is display tickets', displayTickets)
     return (
       <>
         <div>
