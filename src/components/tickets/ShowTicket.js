@@ -58,7 +58,7 @@ render () {
       <h1>Ticket</h1>
       <p>Job: {job}</p>
       <p>Labor: {labor}</p>
-      <p>Completed: {isComplete}</p>
+      <p>Completed: {isComplete.toString()}</p>
       <Button onClick={this.handleDelete}>Delete Ticket</Button>
       <Button onClick={() =>
         history.push(`/tickets/${match.params.carId}/${match.params.ticketId}`)}>Update Ticket</Button>

@@ -31,7 +31,7 @@ const TicketForm = ({ ticket, handleSubmit, handleChange }) => (
         onChange={handleChange}
         required
         name='isCompleted'
-        value={ticket.isComplete}
+        value={ticket.isComplete.toString()}
         placeholder='Completed'
       />
     </Form.Group>
