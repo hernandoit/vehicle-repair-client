@@ -53,7 +53,6 @@ class ShowCars extends Component {
     const displayTickets = car.tickets.map(ticket => (
       <ShowTicket key={ticket.id} job={ticket.job} labor={ticket.labor} isComplete={ticket.isComplete} />
     ))
-    console.log('this is display tickets', displayTickets)
     return (
       <>
         <div>

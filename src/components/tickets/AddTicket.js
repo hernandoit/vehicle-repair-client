@@ -42,7 +42,6 @@ class AddTicket extends Component {
   render () {
     return (
       <>
-        <p>This Cars year make and model</p>
         <Form onSubmit={this.handleSubmmit}>
           <Form.Group>
             <Form.Label>Job
@@ -73,7 +72,7 @@ class AddTicket extends Component {
               required
               name='isComplete'
               onChange={this.handleChange}
-              value= {this.state.isComplete}
+              value= {'' + this.state.isComplete}
               placeholder='Completed'
             />
           </Form.Group>

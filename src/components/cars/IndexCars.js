@@ -54,7 +54,7 @@ class IndexCars extends Component {
 
     return (
       <>
-        <h3>All The Cars:</h3>
+        <h3>My Vehicles</h3>
         {carJsx}
       </>
     )

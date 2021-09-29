@@ -23,10 +23,10 @@ class UpdateTicket extends Component {
     const { match, user, msgAlert } = this.props
 
     showTicket(match.params.id, user)
-      .then(res => this.setState({ car: res.data.ticket }))
+      .then(res => this.setState({ ticket: res.data.ticket }))
       .then(() => msgAlert({
         heading: 'Show ticket success',
-        message: 'Check out the car',
+        message: 'Check out the ticket',
         variant: 'success'
       }))
       .catch(err => msgAlert({
@@ -50,9 +50,9 @@ class UpdateTicket extends Component {
     event.preventDefault()
 
     const { user, msgAlert, history, match } = this.props
-
+    console.log('this is carid', match.params.carId)
     updateTicket(this.state.ticket, match.params.carId, match.params.ticketId, user)
-      .then(res => history.push('/Tickets/' + match.params.carId + '/' + match.params.ticketId))
+      .then(res => history.push('/tickets/' + match.params.carId + '/' + match.params.ticketId))
       .then(() => msgAlert({ heading: 'ticket Updated!', message: 'Nice work, go check out your ticket.', variant: 'success' }))
       .catch(err => {
         msgAlert({
@@ -68,7 +68,7 @@ class UpdateTicket extends Component {
       <>
         <h3>Update your vehicles ticket info</h3>
         <TicketForm
-          car={this.props.ticket}
+          ticket={this.props.ticket}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />

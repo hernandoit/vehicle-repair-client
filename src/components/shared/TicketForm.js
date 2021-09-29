@@ -30,8 +30,8 @@ const TicketForm = ({ ticket, handleSubmit, handleChange }) => (
       <Form.Control
         onChange={handleChange}
         required
-        name='isCompleted'
-        value={ticket.isComplete.toString()}
+        name='isComplete'
+        value={'' + ticket.isComplete}
         placeholder='Completed'
       />
     </Form.Group>

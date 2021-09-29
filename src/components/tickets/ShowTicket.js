@@ -10,14 +10,13 @@ class ShowTicket extends Component {
     super(props)
 
     this.state = {
-      tickets: null
+      ticket: null
     }
   }
 
   componentDidMount () {
     const { ticket } = this.props
-    this.setState({ tickets: ticket })
-    console.log(this.state.ticket)
+    this.setState({ ticket: ticket })
   }
 
 handleUpdate = () => {
