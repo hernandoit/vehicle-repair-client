@@ -4,9 +4,9 @@ import { withRouter } from 'react-router-dom'
 import { showCars, destroyCar } from '../../api/cars'
 
 import Button from 'react-bootstrap/Button'
-import ShowTicket from '../tickets/ShowTicket'
+import IndexTickets from '../tickets/IndexTickets'
 
-class ShowCars extends Component {
+class ShowCar extends Component {
   constructor (props) {
     super(props)
 
@@ -51,7 +51,7 @@ class ShowCars extends Component {
     const { history, match } = this.props
     const { car } = this.state
     const displayTickets = car.tickets.map(ticket => (
-      <ShowTicket key={ticket.id} job={ticket.job} labor={ticket.labor} isComplete={ticket.isComplete} />
+      <IndexTickets key={ticket.id} job={ticket.job} labor={ticket.labor} isComplete={ticket.isComplete} />
     ))
     return (
       <>
@@ -67,4 +67,4 @@ class ShowCars extends Component {
   }
 }
 
-export default withRouter(ShowCars)
+export default withRouter(ShowCar)

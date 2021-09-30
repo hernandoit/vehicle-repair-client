@@ -18,6 +18,17 @@ export const addTicket = (data, carId, user) => {
   })
 }
 
+// Index request
+export const indexTickets = (user) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/tickets',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
+
 // GET /tickets/:carId/:ticketId
 export const showTicket = (carId, ticketId, user) => {
   return axios({

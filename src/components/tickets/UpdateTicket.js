@@ -22,7 +22,7 @@ class UpdateTicket extends Component {
     // one of the automatic router props we get is the match object - that has data about the params in our front-end route url
     const { match, user, msgAlert } = this.props
 
-    showTicket(match.params.id, user)
+    showTicket(match.params.carId, match.params.ticketId, user)
       .then(res => this.setState({ ticket: res.data.ticket }))
       .then(() => msgAlert({
         heading: 'Show ticket success',

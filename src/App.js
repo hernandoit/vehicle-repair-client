@@ -19,6 +19,7 @@ import UpdateCar from './components/cars/UpdateCar'
 // Import our Tickets components
 import AddTicket from './components/tickets/AddTicket'
 import ShowTicket from './components/tickets/ShowTicket'
+import IndexTickets from './components/tickets/IndexTickets'
 import UpdateTicket from './components/tickets/UpdateTicket'
 
 class App extends Component {
@@ -36,15 +37,17 @@ class App extends Component {
 
   deleteAlert = (id) => {
     this.setState((state) => {
-      return { msgAlerts: state.msgAlerts.filter((msg) => msg.id !== id) }
+      return { msgAlerts: state.msgAlerts.filter((msg) => msg.id !== id) 
+      }
     })
   }
 
   msgAlert = ({ heading, message, variant }) => {
     const id = uuid()
     this.setState((state) => {
+      const newMsgAlert = { heading, message, variant, id }
       return {
-        msgAlerts: [...state.msgAlerts, { heading, message, variant, id }]
+        msgAlerts: [...state.msgAlerts, newMsgAlert]
       }
     })
   }
@@ -131,6 +134,14 @@ class App extends Component {
             path='/add-tickets/:carId'
             render={() => (
               <AddTicket msgAlert={this.msgAlert} user={user}/>
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/tickets'
+            render={() => (
+              <IndexTickets user={user} msgAlert={this.msgAlert}/>
             )}
           />
           <AuthenticatedRoute
