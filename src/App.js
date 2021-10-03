@@ -37,8 +37,7 @@ class App extends Component {
 
   deleteAlert = (id) => {
     this.setState((state) => {
-      return { msgAlerts: state.msgAlerts.filter((msg) => msg.id !== id) 
-      }
+      return { msgAlerts: state.msgAlerts.filter((msg) => msg.id !== id) }
     })
   }
 
